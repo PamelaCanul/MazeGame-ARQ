@@ -29,7 +29,7 @@ public class TheArchitect extends JFrame{
    {
        updatedMatrix[WallXCord][WallYCord]="E";  
    }
-   
+    
     public void playerMove(int xScale, int yScale, String[][] currentMatrix,int totalDimonds)throws StupidAssMove
     {
        int x=0;

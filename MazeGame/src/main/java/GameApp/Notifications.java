@@ -9,6 +9,6 @@ package GameApp;
  *
  * @author Audny Correa
  */
-public class Notifications {
-    
+public class Notifications extends Exception {
+    public 
 }

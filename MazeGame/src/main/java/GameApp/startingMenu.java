@@ -118,7 +118,7 @@ public class startingMenu extends javax.swing.JFrame {
             int returnVal = chooser.showOpenDialog(this);
             if(returnVal == JFileChooser.APPROVE_OPTION) 
             {
-                fl.loadFile(chooser.getSelectedFile().getName());//load the file we need
+                fl.fileLoader(chooser.getSelectedFile().getName());//load the file we need
                 theArc.setExit(fl.ExitXCord(),fl.ExitYCord());
                 loadMatrixGui("newLoad"); 
             }
