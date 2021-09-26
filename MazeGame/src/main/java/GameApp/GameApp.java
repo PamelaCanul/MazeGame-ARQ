@@ -11,6 +11,7 @@ package GameApp;
  */
 public class GameApp {
     public static void main (String[] args){
+        new startingMenu();
         
     }
 }

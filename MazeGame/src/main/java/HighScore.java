@@ -14,7 +14,7 @@ import java.io.PrintWriter;
  * @author Pamela
  */
 public class HighScore {
-        public void higScore(String name, int minutes, int seconds, int level) throws FileNotFoundException{
+        public void highScore(String name, int minutes, int seconds, int level) throws FileNotFoundException{
         try {
             //Imprimir los highScore en scores.txt
             String outData = "PlayerName: " + name + " Total time: " + minutes + ":" + seconds + " Level Reached: " + level; 
@@ -27,5 +27,8 @@ public class HighScore {
             System.out.println(ex);
         }
     }
+        public void showHighScores(){
+            
+        }
 }
 

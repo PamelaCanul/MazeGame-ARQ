@@ -8,7 +8,7 @@
  *
  * @author Pamela
  */
-public class Time {
+public class TimeOfGame {
     int minutes = 0;
     int seconds = 0; 
     
