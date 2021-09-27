@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -51,6 +52,11 @@ public class startingMenu extends javax.swing.JFrame {
     private JLabel[][] labelMatrix;
     private mazeObject mo;
     private JLabel shagLabel;
+    private JButton jButton1;
+    private JButton jButton2;
+    private JButton jButton3;
+    private JButton jButton4;
+    private JLabel jLabel1;
     
     /**
      * Creates new form startingMenu
@@ -91,6 +97,11 @@ public class startingMenu extends javax.swing.JFrame {
         });
 
         jButton3.setText("High Score");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Exit");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +177,14 @@ public class startingMenu extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        HighScore scores = new HighScore();
+        scores.showHighScores();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,7 +255,7 @@ public class startingMenu extends javax.swing.JFrame {
     }//end actionPerformed
     };//end class
 
-    private class mazeObject {
+    private class mazeObject extends JLabel {
     
         private JLabel imageLabel;
         public mazeObject(String fileName)
@@ -261,8 +279,7 @@ public class startingMenu extends javax.swing.JFrame {
         }
     }//end class
         
-         public void loadMatrixGui(String event)
-     {
+         public void loadMatrixGui(String event){
         newPanel = new JPanel();
         if (event == "newLoad")
          {       
@@ -303,7 +320,8 @@ public class startingMenu extends javax.swing.JFrame {
         }
           for (int i = 0; i < labelMatrix.length; i++){
               for (int j = 0; j < labelMatrix[i].length; j++){
-                  labelMatrix[i][j]= mo=new mazeObject(scrapMatrix[i][j]);//add our maze images into the gui
+                  mo=new mazeObject(scrapMatrix[i][j]);//add our maze images into the gui
+                  labelMatrix[i][j]= mo;
               }}//end double for loop
          cp.add(newPanel);
          remove(shagLabel);//remove the constructors initial background
